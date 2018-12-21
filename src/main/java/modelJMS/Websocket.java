@@ -10,12 +10,12 @@ import org.eclipse.jetty.websocket.api.Session;
 public class Websocket {
 
     @OnWebSocketConnect
-    public void add(Session session) {
+    public void addSession(Session session) {
         Main.sessions.add(session);
     }
 
     @OnWebSocketClose
-    public void remove(Session session, int statusCode, String reason) {
+    public void removeSession(Session session, int statusCode, String reason) {
         Main.sessions.remove(session);
     }
 }

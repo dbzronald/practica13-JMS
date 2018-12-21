@@ -47,19 +47,5 @@ public class Productor {
 
         // Creando un simple mensaje de texto y enviando.
 
-    System.out.println("WTFW");
-        while (true) {
-            Trama t = new Trama();
-            t.setFechaGeneracion(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()));
-            System.out.println(t.getFechaGeneracion());
-            t.setIdDispositivo((int) (Math.random() * 100) + 1);
-            t.setHumedad((long) (Math.random() * 100) + 1);
-            t.setTemperatura((long) (Math.random() * 100) + 1);
-            Gson g = new Gson();
-            String m = g.toJson(t);
-            TextMessage message = session.createTextMessage(m);
-            producer.send(message);
-
-        }
     }
 }
